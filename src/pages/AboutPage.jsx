@@ -15,7 +15,9 @@ const AboutPage = () => {
                     <div className='underline'></div>
                 </div>
                 <p>
-                We are going to be a winner here.  
+                We are going to be a winner here.  Now its time to add more levels to this <span>
+                  win today.
+                </span>
                 </p>
             </article>
         </Wrapper>
