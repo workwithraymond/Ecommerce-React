@@ -10,6 +10,7 @@ Currently, two official plugins are available:
 
 https://github.com/john-smilga/react-course-comfy-sloth-store  
 https://react-course-comfy-sloth-store.netlify.app/
+https://github.com/john-smilga/react-course-comfy-sloth-starter
 
 https://react-projects.netlify.app/ 
 
