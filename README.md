@@ -21,3 +21,7 @@ npm install styled-components
 
 
 https://formspree.io/  
+
+setting up authentication 
+
+https://auth0.com/
