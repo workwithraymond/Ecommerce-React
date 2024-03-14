@@ -8,14 +8,29 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App.jsx'
 import './index.css'
 
+//
+//
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ProductsProvider>
-    <FilterProvider>
-    <App />  
-    </FilterProvider>
-    
-  </ProductsProvider>,
-)
+  <Auth0Provider
+    domain='dev-rxtmyu71ooqow0d6.us.auth0.com'
+    clientId='SxTWHsJKrMY98BhaeY1JzVIBsip5jRhi'
+    authorizationParams={{
+      redirect_uri: `${window.location.origin}/cart`,
+    }}
+  >
+    <UserProvider>
+      <ProductsProvider>
+        <FilterProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </FilterProvider>
+      </ProductsProvider>
+    </UserProvider>
+  </Auth0Provider>
+);
+
 
 
 
