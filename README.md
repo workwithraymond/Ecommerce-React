@@ -39,3 +39,7 @@ http://localhost:5173/
   "picture": "https://s.gravatar.com/avatar/d609a95259841f34385941e58a73c265?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fwo.png",
   "updated_at": "2024-03-14T10:31:28.102Z"
 }
+
+How to use payment 
+-Set up a stripe account
+stripe.com
