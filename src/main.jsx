@@ -13,8 +13,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0Provider
-    domain='dev-rxtmyu71ooqow0d6.us.auth0.com'
-    clientId='SxTWHsJKrMY98BhaeY1JzVIBsip5jRhi'
+    domain={process.env.REACT_APP_AUTH_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
     authorizationParams={{
       redirect_uri: `${window.location.origin}/cart`,
     }}
