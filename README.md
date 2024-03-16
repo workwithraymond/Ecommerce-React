@@ -26,19 +26,11 @@ setting up authentication
 
 https://auth0.com/ 
 
-Domain dev-rxtmyu71ooqow0d6.us.auth0.com
-Client ID SxTWHsJKrMY98BhaeY1JzVIBsip5jRhi
-Client Secret lCaUvmcPY8qTLS1NaW7KqQPBcPtbCtTRLUUInAcK67JxbKMHk6dPfGsefVoWeuVL 
+
 
 http://localhost:5173/
 
-{
-  "sub": "auth0|65f2d19c622a79905327aa5a",
-  "nickname": "workwithraymond01",
-  "name": "workwithraymond01@gmail.com",
-  "picture": "https://s.gravatar.com/avatar/d609a95259841f34385941e58a73c265?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fwo.png",
-  "updated_at": "2024-03-14T10:31:28.102Z"
-}
+
 
 How to use payment 
 -Set up a stripe account

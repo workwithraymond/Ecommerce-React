@@ -13,8 +13,6 @@ import { useUserContext } from '../context/user_context';
 import { formatPrice } from '../utils/helpers';
 import { useNavigate } from 'react-router-dom';
 
-const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-
 const CheckoutForm = () => {
   const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
   const { myUser } = useUserContext();
@@ -31,7 +29,6 @@ const CheckoutForm = () => {
     try {
       const { data } = await axios.post(
         '/.netlify/functions/create-payment-intent',
-
         JSON.stringify({ cart, shipping_fee, total_amount })
       );
       setClientSecret(data.clientSecret);
@@ -39,10 +36,15 @@ const CheckoutForm = () => {
       // console.log(error.response)
     }
   };
+  
   useEffect(() => {
     createPaymentIntent();
     // eslint-disable-next-line
   }, []);
+
+  const stripePublicKey = process.env.REACT_APP_STRIPE_PUBLIC_KEY || 'pk_test_51OuYEeRt1Y8pt1rQiabFQ8qgWteVfhpyUqhSjKgThD2HiUtBFaE5JS0ryBYmEm0NcAorT2BRvwyBC8deUH8OvdDR00hMNj6fhv';
+
+  const promise = loadStripe(stripePublicKey);
 
   const cardStyle = {
     style: {
@@ -61,12 +63,12 @@ const CheckoutForm = () => {
       },
     },
   };
+
   const handleChange = async (event) => {
-    // Listen for changes in the CardElement
-    // and display any errors as the customer types their card details
     setDisabled(event.empty);
     setError(event.error ? event.error.message : '');
   };
+
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     setProcessing(true);
@@ -88,6 +90,7 @@ const CheckoutForm = () => {
       }, 10000);
     }
   };
+
   return (
     <div>
       {succeeded ? (
@@ -114,13 +117,11 @@ const CheckoutForm = () => {
             {processing ? <div className='spinner' id='spinner'></div> : 'Pay'}
           </span>
         </button>
-        {/* Show any error that happens when processing the payment */}
         {error && (
           <div className='card-error' role='alert'>
             {error}
           </div>
         )}
-        {/* Show a success message upon completion */}
         <p className={succeeded ? 'result-message' : 'result-message hidden'}>
           Payment succeeded, see the result in your
           <a href={`https://dashboard.stripe.com/test/payments`}>

@@ -6,7 +6,8 @@ import {
   TOGGLE_CART_ITEM_AMOUNT,
 } from '../actions'
 
-const cart_reducer = (state, action) => {
+
+const cart_reducer = (state = initialState, action) => {
   if (action.type === ADD_TO_CART) {
     const { id, color, amount, product } = action.payload
     const tempItem = state.cart.find((i) => i.id === id + color)
