@@ -35,3 +35,5 @@ http://localhost:5173/
 How to use payment 
 -Set up a stripe account
 stripe.com
+
+https://github.com/MadCoder911/React-E-Commerce

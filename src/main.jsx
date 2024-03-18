@@ -16,8 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     domain={import.meta.env.VITE_REACT_APP_AUTH_DOMAIN}
     clientId={import.meta.env.VITE_REACT_APP_AUTH_CLIENT_ID}
     authorizationParams={{
-      redirect_uri: `${window.location.origin}/cart`,
+      redirect_uri: window.location.origin
     }}
+    cacheLocation="localstorage"
   >
     <UserProvider>
       <ProductsProvider>

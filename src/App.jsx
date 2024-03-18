@@ -14,7 +14,7 @@ import {
 } from './pages';
 function App() {
   return (
-    <AuthWrapper>
+    
       <Router>
         <Navbar />
         <Sidebar />
@@ -36,7 +36,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </AuthWrapper>
+    
   );
 }
 
